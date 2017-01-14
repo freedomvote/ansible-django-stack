@@ -15,7 +15,7 @@
   roles:
     - base
     - db
-    - rabbitmq
+    # - rabbitmq
     - web
-    - celery
+    # - celery
     - nginx
