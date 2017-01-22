@@ -3,6 +3,10 @@
 - name: Install packages required by the Django app inside virtualenv
   pip: virtualenv={{ virtualenv_path }} requirements={{ requirements_file }}
 
+- name: Create the settings file
+  template: src=settings.j2
+            dest="{{ project_path }}/app/settings.ini"
+
 - name: Run the Django syncdb command
   django_manage:
     command: syncdb
